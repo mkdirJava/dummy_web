@@ -15,7 +15,8 @@ func Test_server(t *testing.T) {
 		if responseText, responseTextErr := io.ReadAll(result.Body); responseTextErr != nil {
 			t.Errorf("response could not be read into a string %v", responseTextErr)
 		} else {
-			if string(responseText) != "hi" {
+			textResult := string(responseText)
+			if textResult != "hi" {
 				t.Errorf("the response text shoult be \"Hi\" it is acturally %v", responseText)
 			}
 		}
